@@ -1,0 +1,6 @@
+{
+  "name": "Splitwise Clone",
+  "description": "A complete, highly polished full-stack Splitwise-inspired group expense splitting application with a relational database model, multi-strategy split, user chats, real-time-like updates, and debt settlement.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
