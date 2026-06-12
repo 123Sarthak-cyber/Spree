@@ -14,6 +14,7 @@ import {
   ExpenseSplit, 
   ChatMessage, 
   Settlement,
+  Wallet,
   SplitType,
   BalanceSummary,
   DebtRelation
@@ -28,6 +29,7 @@ export interface RelationalSchema {
   groupMembers: GroupMember[];
   expenses: Expense[];
   expenseSplits: ExpenseSplit[];
+  walletTransaction:WalletTransaction[];
   chats: ChatMessage[];
   settlements: Settlement[];
 }
@@ -44,6 +46,7 @@ const INITIAL_DEMO_GROUPS: Group[] = [
   { id: 'grp-1', name: 'Ski Trip 2026', description: 'Annual ski vacation expenses and gear splits.', createdBy: 'usr-1', createdAt: new Date().toISOString() },
   { id: 'grp-2', name: 'Apartment 4B', description: 'Monthly rent, groceries, and utility sharing.', createdBy: 'usr-2', createdAt: new Date().toISOString() },
 ];
+
 
 const INITIAL_DEMO_MEMBERS: GroupMember[] = [
   { groupId: 'grp-1', userId: 'usr-1', joinedAt: new Date().toISOString() },
@@ -113,6 +116,15 @@ const INITIAL_DEMO_CHATS: ChatMessage[] = [
 const INITIAL_DEMO_SETTLEMENTS: Settlement[] = [
   { id: 'set-1', groupId: 'grp-1', payerId: 'usr-2', payeeId: 'usr-1', amount: 50, createdAt: new Date(Date.now() - 1 * 24 * 3600 * 1000).toISOString() }
 ];
+const INITIAL_DEMO_WALLET: WalletTransaction=[
+{
+  id:string
+  userId:string
+  amount:number
+  type:'deposit'|'withdrawal'|'settlement'
+  createdAt:string
+}
+  ];
 
 export class RelationalDatabase {
   private cache: RelationalSchema;
