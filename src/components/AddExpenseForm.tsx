@@ -11,6 +11,7 @@ interface AddExpenseFormProps {
     description: string;
     paidBy: string;
     splitType: SplitType;
+    Wallet: number;
     splits: { userId: string; amountOwed: number; percentage?: number; shareCount?: number }[];
   }) => Promise<void>;
   onCancel: () => void;
