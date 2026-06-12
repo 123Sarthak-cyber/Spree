@@ -35,6 +35,11 @@ export interface Expense {
   splitType: SplitType;
   createdAt: string;
 }
+export interface Wallet{
+  userId: string;
+  balance: number;
+  updatedAT: string;
+}
 
 export interface ExpenseSplit {
   expenseId: string;
